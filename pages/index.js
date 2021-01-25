@@ -5,6 +5,7 @@ import QuizLogo from '../src/components/QuizLogo'
 import QuizBackground from '../src/components/QuizBackground'
 import Footer from '../src/components/Footer'
 import GitHubCorner from '../src/components/GitHubCorner'
+import Head from 'next/head'
 
 // const BackgroundImage = styled.div`
 //   background-image: url(${db.bg});
@@ -26,12 +27,17 @@ export const QuizContainer = styled.div`
 
 export default function Home() {
   return (
+   
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
         <QuizLogo />
         <Widget>
           <Widget.Header>
+            <title>SPFC QUIZ</title>
             <h1>Quiz do São Paulo FC</h1>
+            <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+            <meta property="og:title" content="SPFC Quiz" key="title" />
+            <meta property="og:image" content="https://wallpaperaccess.com/full/1949839.jpg"/>
           </Widget.Header>
           <Widget.Content>
             <p>Entre no Quiz!</p>
