@@ -7,6 +7,9 @@ import Footer from '../src/components/Footer'
 import GitHubCorner from '../src/components/GitHubCorner'
 import Head from 'next/head'
 import { useRouter } from 'next/router';
+import Input from '../src/components/Input';
+import Button from '../src/components/Button';
+import QuizContainer from '../src/components/QuizContainer'
 
 // const BackgroundImage = styled.div`
 //   background-image: url(${db.bg});
@@ -14,17 +17,6 @@ import { useRouter } from 'next/router';
 //   background-size: cover;
 //   background-position: center;
 // `;
-
-export const QuizContainer = styled.div`
-  width: 100%;
-  max-width: 340px;
-  padding-top: 45px;
-  margin: auto 10%;
-  @media screen and (max-width: 500px) {
-    margin: auto;
-    padding: 15px;
-  }
-`;
 
 export default function Home() {
   const router = useRouter();
@@ -47,16 +39,18 @@ export default function Home() {
           <Widget.Content>
             <form onSubmit={function (e) {
               e.preventDefault();
-              
               router.push(`/quiz?name=${name}`);
               console.log("Fazendo uma submissão por meio do formulario");
             }
 
             }>
-              <input onChange={function (infos) {
-                setName(infos.target.value);
-              }}  placeholder="Digite seu nome" />
-              <button type="submit" disabled={name.length === 0}>JOGAR</button>
+              <Input 
+                name="Nome do Usuário"
+                onChange={(e) => setName(e.target.value)}  
+                placeholder="Digite seu nome" 
+                value={ name }
+                />
+                <Button type="submit" disabled={name.length === 0}>JOGAR</Button>
             </form>
 
           </Widget.Content>

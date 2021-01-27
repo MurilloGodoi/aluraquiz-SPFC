@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Widget = styled.div`
+const WidgetQuiz = styled.div`
   margin-top: 24px;
   margin-bottom: 24px;
   border: 1px solid white;
@@ -20,7 +20,7 @@ const Widget = styled.div`
   }
 `;
 
-Widget.Header = styled.header`
+WidgetQuiz.Header = styled.header`
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -32,22 +32,34 @@ Widget.Header = styled.header`
   }
 `;
 
-Widget.Content = styled.div`
-  padding: 24px 32px 32px 32px;
-  & > *:first-child {
-    margin-top: 0;
-  }
-  & > *:last-child {
-    margin-bottom: 0;
-  }
-  ul {
-    list-style: none;
-    padding: 0;
-  }
+WidgetQuiz.Content = styled.div`
+background-color: black;
+padding: 24px 32px 32px 32px;
+& > *:first-child {
+  margin-top: 0;
+}
+& > *:last-child {
+  margin-bottom: 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  background-color:red;
+}
+label {
+  background-color:red;
+}
+button {
+  margin-top: 10px;
+  background-color:red;
+}
+.loading {
+    width: 10px;
+    height: 100px;
+}
 `;
 
-
-Widget.Topic = styled.a`
+WidgetQuiz.Topic = styled.a`
   outline: 0;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.contrastText};
@@ -65,4 +77,4 @@ Widget.Topic = styled.a`
   }
 `;
 
-export default Widget;
+export default WidgetQuiz;
