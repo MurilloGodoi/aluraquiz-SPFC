@@ -101,9 +101,9 @@ function QuestionWidget({
             setIsQuestionSubmited(true);
             setTimeout( () => {
               addResult(isCorrect);
+              setSelectedAlternative(undefined);
               onSubmit();
               setIsQuestionSubmited(false); 
-              setSelectedAlternative(undefined);
             }, 1 * 750);
           }}
         >
@@ -120,7 +120,7 @@ function QuestionWidget({
                 data-status={isQuestionSubmited && alternativeStatus}
               >
                 <input
-                  // style={{ display: 'none' }}
+                  style={{ display: 'none' }}
                   id={alternativeId}
                   name={questionId}
                   onChange={() => setSelectedAlternative(alternativeIndex)} 
@@ -173,7 +173,7 @@ export default function QuizPage() {
     // fetch() ...
     setTimeout(() => {
       setScreenState(screenStates.QUIZ);
-    }, 1 * 1000);
+    }, 1 * 750);
   // nasce === didMount
   }, []);
 
