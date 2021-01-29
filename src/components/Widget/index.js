@@ -65,4 +65,22 @@ Widget.Topic = styled.a`
   }
 `;
 
+Widget.Quizes = styled.a`
+  outline: 0;
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.contrastText};
+  background-color: black;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border-radius: ${({ theme }) => theme.borderRadius};
+  display: block;
+
+  &:hover,
+  &:focus {
+    opacity: .5;
+    background-color:#808080;
+  }
+`;
+
 export default Widget;
