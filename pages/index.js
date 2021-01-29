@@ -10,6 +10,8 @@ import { useRouter } from 'next/router';
 import Input from '../src/components/Input';
 import Button from '../src/components/Button';
 import QuizContainer from '../src/components/QuizContainer'
+import Link from '../src/components/Link';
+import { motion } from 'framer-motion';
 
 // const BackgroundImage = styled.div`
 //   background-image: url(${db.bg});
@@ -26,13 +28,22 @@ export default function Home() {
     <QuizBackground backgroundImage={db.bg}>
       <Head>
         <title>SPFC QUIZ</title>
+        <link rel="shortcut icon" type="image/png" href="https://i.pinimg.com/originals/e3/eb/5f/e3eb5f568f58a7ec1c87320b34f2f27b.png" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta property="og:title" content="SPFC Quiz" key="title" />
         <meta property="og:image" content="https://wallpaperaccess.com/full/1949839.jpg" />
       </Head>
       <QuizContainer>
         <QuizLogo />
-        <Widget>
+        <Widget as={motion.section}
+        transition={{ duration: 2}}
+        variants={{
+          show: {opacity:1},
+          hidden: {opacity:0}
+        }}
+        initial="hidden"
+        animate="show"
+        >
           <Widget.Header>
             <h1>Quiz do São Paulo FC</h1>
           </Widget.Header>
@@ -44,28 +55,40 @@ export default function Home() {
             }
 
             }>
-              <Input 
+              <Input
                 name="Nome do Usuário"
-                onChange={(e) => setName(e.target.value)}  
-                placeholder="Digite seu nome" 
-                value={ name }
-                />
-                <Button type="submit" disabled={name.length === 0}>JOGAR</Button>
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Digite seu nome"
+                value={name}
+              />
+              <Button type="submit" disabled={name.length === 0}>JOGAR</Button>
             </form>
 
           </Widget.Content>
         </Widget>
 
-        <Widget>
-          <Widget.Content>
-            <h1>Quizes da Galera</h1>
-
-            <p>Entre no Quiz!</p>
-          </Widget.Content>
+        <Widget as={motion.section}
+        variants={{
+          show: {opacity:1},
+          hidden: {opacity:0}
+        }}
+        transition={{ duration: 5}}
+        initial="hidden"
+        animate="show">
+          
         </Widget>
-        <Footer />
+        <Footer as={motion.section}
+        variants={{
+          show: {opacity:1},
+          hidden: {opacity:0}
+        }}
+        transition={{ duration: 3}}
+        initial="hidden"
+        animate="show"/>
       </QuizContainer>
       <GitHubCorner projectUrl="https://github.com/MurilloGodoi" />
     </QuizBackground>
   );
 }
+
+
