@@ -16,7 +16,7 @@
         ]
       },
       {
-        "image": "https://lh3.googleusercontent.com/proxy/EEHXwuel8bVWu411U55dRlCj8KGkSUxPQWvn_YdcJakvo5vXAOV4vTqB_jXE5aBuZiV3FLC4BhCsUWFEHBGKlbTtQUusCir3AoIsmO6SMMCDVnxRFvOH1V4HCsg9g9cO6scbWAd9fp1o2K0qW-CvuhM-GQOEsf2t9YxUcFg",
+        "image": "https://static-wp-tor15-prd.torcedores.com/wp-content/uploads/2020/05/sao-paulo-09-rogerio-ceni.jpg",
         "title": "Quantos gols Rogério Ceni tem em sua carreira?",
         "description": "Difícil em haha",
         "answer": 2,
@@ -55,7 +55,9 @@
   ]
   ,
     "external": [
-      ""
+      "https://aluraquiz-base.alura-challenges.vercel.app/",
+      "https://aluraquiz-css.omariosouto.vercel.app/",
+      "https://aluraquiz-devsoutinho.omariosouto.vercel.app/"
     ],
     "theme": {
       "colors": {
